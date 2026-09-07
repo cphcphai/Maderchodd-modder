@@ -211,14 +211,16 @@ def fb_patch(path, data):
 
 def tg_call(method, payload):
     try:
+        # Telegram Markdown parsing ki wajah se error na aaye
+        if method == "sendMessage":
+            payload.pop("parse_mode", None)
+
         r = requests.post(
             f"{TELEGRAM_API}/{method}",
             json=payload,
             timeout=10,
         )
-        result = r.json()
-        print(f"[telegram] {method}: {result}")
-        return result
+        return r.json()
 
     except requests.RequestException as e:
         print(f"[telegram] {method} failed: {e}")
