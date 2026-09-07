@@ -307,7 +307,7 @@ MAIN_MENU_KB = {
     "keyboard": [
         [{"text": "🔑 Generate License Key"}],
         [{"text": "📋 Keys List"}],
-        [{"text": "🚪 Logout"}],
+        [{"text": "🏚️ Logout"}],
     ],
     "resize_keyboard": True,
 }
@@ -794,7 +794,7 @@ def send_keys_list(chat_id):
 
         result = send_message(
             chat_id,
-            "📋 *Keys List**\n\n"
+            "📋 *Keys List\n\n"
             "No license keys found.\n\n"
             "🧹 `/deletelog msg`",
             MAIN_MENU_KB,
@@ -809,7 +809,7 @@ def send_keys_list(chat_id):
         return
 
     lines = [
-        "📋 **Keys List**",
+        "📋 Keys List",
         "",
     ]
 
@@ -993,12 +993,12 @@ def remove_license_key(
 # --------------------------------------------------------------------------
 
 START_MESSAGE = (
-    "⚡ **GalvnicEngine Admin Panel**\n"
-    "🔐 **Referral Key Required**\n\n"
-    "👤 Admin Panel access ke liye contact:\n"
-    "👉 **@GVM_TRUST**\n"
-    "🔑 **If you have a Referral Key, paste it here:**\n"
-    "📥 Send your Referral Key below to continue👇 ."
+    "⚡ 𝘎𝘢𝘭𝘷𝘯𝘪𝘤𝘌𝘯𝘨𝘪𝘯𝘦 𝘈𝘥𝘮𝘪𝘯 𝘗𝘢𝘯𝘦𝘭\n"
+    "🔐 𝘙𝘦𝘧𝘦𝘳𝘳𝘢𝘭 𝘒𝘦𝘺 𝘙𝘦𝘲𝘶𝘪𝘳𝘦𝘥\n\n"
+    "👤 𝘼𝙙𝙢𝙞𝙣 𝙋𝙖𝙣𝙚𝙡 𝙖𝙘𝙘𝙚𝙨𝙨 𝙠𝙚 𝙡𝙞𝙮𝙚 𝙘𝙤𝙣𝙩𝙖𝙘𝙩:\n"
+    "👉 @GVM_TRUST\n"
+    "🔑 𝙄𝙛 𝙮𝙤𝙪 𝙝𝙖𝙫𝙚 𝙖 𝙍𝙚𝙛𝙚𝙧𝙧𝙖𝙡 𝙆𝙚𝙮, 𝙥𝙖𝙨𝙩𝙚 𝙞𝙩 𝙝𝙚𝙧𝙚:\n"
+    "📥 Sᴇɴᴅ ʏᴏᴜʀ Rᴇꜰᴇʀʀᴀʟ Kᴇʏ ʙᴇʟᴏᴡ ᴛᴏ ᴄᴏɴᴛɪɴᴜᴇ👇 ."
 )
 
 
@@ -1028,7 +1028,7 @@ def handle_message(message):
 
             send_message(
                 chat_id,
-                "✅ **Welcome back!**\n\n"
+                "✅ Welcome back!\n\n"
                 "You're already activated.\n"
                 "Use the menu below.",
                 MAIN_MENU_KB,
@@ -1143,7 +1143,7 @@ def handle_message(message):
 
             send_message(
                 chat_id,
-                f"✅ **Activated Successfully!**\n\n"
+                f"✅ Activated Successfully!\n\n"
                 f"Referral access valid until:\n"
                 f"`{expire}`\n\n"
                 "Use the menu below.",
@@ -1162,7 +1162,7 @@ def handle_message(message):
 
             send_message(
                 chat_id,
-                "⌛ **Referral Key Expired**\n\n"
+                "⌛ Referral Key Expired\n\n"
                 "Please request a new Referral Key.",
             )
 
@@ -1170,7 +1170,7 @@ def handle_message(message):
 
             send_message(
                 chat_id,
-                "❌ **Invalid Referral Key**\n\n"
+                "❌ Invalid Referral Key\n\n"
                 "Please check the key and try again.",
             )
 
@@ -1233,7 +1233,7 @@ def handle_message(message):
 
         send_message(
             chat_id,
-            "✅ **Custom Key Accepted**\n\n"
+            "✅ Custom Key Accepted\n\n"
             f"🔑 Key: `{custom_key}`\n\n"
             "📱 How many devices should this "
             "license support?\n\n"
@@ -1320,7 +1320,7 @@ def handle_message(message):
         )
 
         reply = (
-            "✅ **License Created!**\n\n"
+            "✅ License Created!\n\n"
             f"🔑 Key: `{key_id}`\n"
             f"⏳ Duration: {label}\n"
             f"📅 Expires: "
@@ -1345,7 +1345,7 @@ def handle_message(message):
 
         send_message(
             chat_id,
-            "🔑 **Choose Key Type:**",
+            "🔑 Choose Key Type:",
             key_type_inline_kb(),
         )
 
@@ -1363,7 +1363,7 @@ def handle_message(message):
 
         send_message(
             chat_id,
-            "👋 **Logged Out Successfully**\n\n"
+            "👋 Logged Out Successfully\n\n"
             "Send /start and enter a Referral Key "
             "to activate again.",
             REMOVE_KB,
@@ -1573,7 +1573,7 @@ def handle_callback(callback):
             edit_message(
                 chat_id,
                 message_id,
-                f"⏳ Duration: **{label}**\n\n"
+                f"⏳ Duration: {label}\n\n"
                 "📱 How many devices should this "
                 "license support?\n\n"
                 "Reply with a number, e.g. `1`, `2`, `5`.",
@@ -1603,8 +1603,8 @@ def handle_callback(callback):
             edit_message(
                 chat_id,
                 message_id,
-                f"⏳ Duration: **{label}**\n\n"
-                "✏️ **Enter your custom key name.**\n\n"
+                f"⏳ Duration: {label}\n\n"
+                "✏️ Enter your custom key name.\n\n"
                 "Examples:\n"
                 "`TRUSTVIP`\n"
                 "`TRUST-7D`\n"
